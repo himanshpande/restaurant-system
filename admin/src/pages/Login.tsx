@@ -78,7 +78,7 @@ const Login = () => {
         </button>
 
         <p className="text-center mt-4">
-          Don't have an account?{" "}
+          Don't have an account for Admin?{" "}
           <Link
             to="/register"
             className="text-orange-500 font-semibold"

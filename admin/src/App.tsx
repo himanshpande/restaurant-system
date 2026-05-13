@@ -5,9 +5,10 @@ import {
 } from "react-router-dom";
 
 
-import Dashboard from "./pages/Dashboard";
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import MainLayout from "./Dashboard/MainLayout";
 
 function App() {
   return (
@@ -22,8 +23,10 @@ function App() {
 
         <Route
           path="/dashboard"
-          element={<Dashboard />}
+          element={<MainLayout/>}
         />
+        {/* <Route
+        path="/" */}
       </Routes>
     </BrowserRouter>
   );

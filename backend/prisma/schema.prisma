@@ -23,3 +23,31 @@ model Table {
   status      String   @default("AVAILABLE")
   createdAt   DateTime @default(now())
 }
+
+enum ProductStatus {
+  AVAILABLE
+  OUT_OF_STOCK
+  HIDDEN
+}
+
+model Product {
+  id          Int             @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  category    String
+  isVeg       Boolean
+  status      ProductStatus   @default(AVAILABLE)
+  createdAt   DateTime        @default(now())
+
+  histories   ProductHistory[]
+}
+
+model ProductHistory {
+  id          Int      @id @default(autoincrement())
+  productId   Int
+  action      String
+  createdAt   DateTime @default(now())
+
+  product Product @relation(fields: [productId], references: [id])
+}
